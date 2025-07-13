@@ -58,7 +58,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
             CustomButton(
               icon: Icons.exposure_minus_1_outlined,
               onPressed: () {
-                if (clickCounter == 0) return;
+                if (clickCounter == -0) return;
                 clickCounter--;
                 setState(() {});
               },
@@ -97,3 +97,4 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+ 
