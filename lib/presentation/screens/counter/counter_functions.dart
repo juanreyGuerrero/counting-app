@@ -63,7 +63,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
                 setState(() {});
               },
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 11),
             CustomButton(
               icon: Icons.plus_one,
               onPressed: () {
