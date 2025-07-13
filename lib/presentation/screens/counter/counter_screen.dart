@@ -10,47 +10,35 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   int clickCounter = 0;
 
-  void incrementCounter() {
-    setState(() {
-      clickCounter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    final String clickText = clickCounter == 1 ? 'click' : 'clicks';
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text(
-          "Counter Screen",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Counter Screen'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "$clickCounter",
-              style: const TextStyle(
-                fontSize: 160,
-                fontWeight: FontWeight.w100,
-              ),
-            ),
-            Text(
-              clickText,
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
+            Text('$clickCounter',
+                style: const TextStyle(
+                    fontSize: 160, fontWeight: FontWeight.w100)),
+                    
+            Text('Click${ clickCounter == 1 ? '':'s' }', style: const TextStyle(fontSize: 25))
+
+            // if( clickCounter == 1 )
+            //   const Text('Click', style: TextStyle(fontSize: 25)),
+
+            // if( clickCounter != 1 )
+            //   const Text('Clicks', style: TextStyle(fontSize: 25)),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: incrementCounter,
+        onPressed: () {
+          clickCounter++;
+          setState(() {});
+        },
         child: const Icon(Icons.plus_one),
       ),
     );
